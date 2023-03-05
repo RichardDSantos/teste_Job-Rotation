@@ -6,20 +6,22 @@ b) Considerar 2 pedágios como obstáculo e que o caminhão leva 5 minutos a mai
 c) Explique como chegou no resultado.
 */
 
-const distance = 100; 
+const franca = 100;
+const ribPreto = 100;  
+const distance = franca + ribPreto; 
 const speedCar = 110; // km/h
 const speedTruck = 80; // km/h
-const timeTolls = 5; // minutos
+const tollStopTime = 5; // minutos
 
-const timeTollHours = timeTolls / 60;
+const timeTollHours = tollStopTime / 60; //converti os minutos para segundos
 
-const timeMeeting = distance / (speedCar + speedTruck);
+const timeMeeting = distance / (speedCar + speedTruck); //Somei as velocidades e dividi pela distância das duas cidades
 
 const carDistance = speedCar * (timeMeeting - timeTollHours);
 
 const TruckDistance = speedTruck * timeMeeting;
 
-const closestVehicle = carDistance > TruckDistance ? "caminhão" : "carro";
+const theClosest = carDistance > TruckDistance ? "caminhão" : "carro";
 
-console.log(`O ${closestVehicle} está mais próximo de Ribeirão Preto.`);
+console.log(`O ${theClosest} está mais próximo de Ribeirão Preto.`);
 
